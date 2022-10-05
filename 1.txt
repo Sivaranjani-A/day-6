@@ -25,14 +25,19 @@ c) Write a method getPG, which takes an array of base type Movie as its argument
           this.studio = studio;
           this.rating = rating;
       }
-      getPG(){
-      return this.rating;
+    getPG(arr){  
+    arr=arr.filter((ele)=>ele.rating=="PG" || ele.rating=="PG13");
+    return arr;
   }
   }  
-  var film = new Movie("Casino Royale","Eon Productions","PG");
-  console.log(film.getPG());
+  var F1 = new Movie("Casino Royale","Eon Productions","PG13");
+  var F2 = new Movie("Vadachennai","Lyca Production Wunderbar films","A");
+  var F3 = new Movie("Ponniyin Selvan","Madras Talkies Lyca Production");
+  var film = new Movie();
+  var arr = [F1,F2,F3];
+  console.log(film.getPG(arr));
 
-d) Write a piece of code that creates an instance of the class Movie with the title “Casino Royale”, the studio “Eon Productions”, and the rating “PG­13”
+d) Write a piece of code that creates an instance of the class Movie with the title â€œCasino Royaleâ€, the studio â€œEon Productionsâ€, and the rating â€œPGÂ­13â€
 class Movie{
       constructor(title,studio,rating){
           this.title = title;
